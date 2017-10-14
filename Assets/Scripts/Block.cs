@@ -7,7 +7,7 @@ public class Block : MonoBehaviour
 
 	public void OnBallHit()
 	{
-		Destroy(gameObject);
 		Game.Instance.AddScore(_value);
+		Destroy(gameObject);
 	}
 }

@@ -6,6 +6,8 @@ public class Ball : MonoBehaviour
 	private float _startingSpeed;
 	[SerializeField]
 	private float _startingAngle;
+	[SerializeField]
+	private AudioClip _hitSound;
 
 	private Rigidbody2D _rigidBody2d;
 	private Vector2 _velocity;
@@ -25,19 +27,29 @@ public class Ball : MonoBehaviour
 		if (other.CompareTag("Wall"))
 		{
 			BounceWall(collision.contacts[0].normal);
+			AudioSource.PlayClipAtPoint(_hitSound,
+									collision.contacts[0].point,
+									1.0f);
 		}
 		else if (other.CompareTag("Deadzone"))
 		{
-			UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+			Game.Instance.RemoveLives(1);
+			Game.Instance.ReloadLevel();
 		}
 		else if (other.CompareTag("Paddle"))
 		{
 			BouncePaddle(other.GetComponent<Paddle>());
+			AudioSource.PlayClipAtPoint(_hitSound,
+									collision.contacts[0].point,
+									1.0f);
 		}
 		else if (other.CompareTag("Block"))
 		{
 			BounceWall(collision.contacts[0].normal);
 			other.GetComponent<Block>().OnBallHit();
+			AudioSource.PlayClipAtPoint(_hitSound,
+									collision.contacts[0].point,
+									1.0f);
 		}
 	}
 	private void BounceWall(Vector2 normal)
