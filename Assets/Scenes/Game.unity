@@ -245,6 +245,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114495849274946678, guid: adc5c38b98592764bb5ff449f04554cc,
+        type: 2}
+      propertyPath: _blockSaturation
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114495849274946678, guid: adc5c38b98592764bb5ff449f04554cc,
+        type: 2}
+      propertyPath: _blockValue
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 50623220813023722, guid: adc5c38b98592764bb5ff449f04554cc,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: adc5c38b98592764bb5ff449f04554cc, type: 2}
   m_IsPrefabParent: 0
