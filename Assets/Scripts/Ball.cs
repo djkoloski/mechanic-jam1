@@ -53,6 +53,10 @@ public class Ball : MonoBehaviour
 	}
 	private void BouncePaddle(Paddle paddle)
 	{
-		_velocity = ((Vector2)transform.position - paddle.BounceCenter).normalized * _velocity.magnitude;
+		float offCenterPos = Mathf.Abs( transform.position.x - paddle.BounceCenter.x ) / ( paddle.Size.x / 2 );
+		Vector2 velocitySet = (( Vector2 )transform.position - paddle.BounceCenter ).normalized * _velocity.magnitude;
+		Vector2 velocityFlip = new Vector2( _velocity.x, -_velocity.y );
+
+		_velocity = Vector2.Lerp( velocityFlip, velocitySet, offCenterPos ).normalized * _velocity.magnitude;
 	}
 }
