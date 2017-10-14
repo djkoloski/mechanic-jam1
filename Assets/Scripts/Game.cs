@@ -43,6 +43,17 @@ public class Game : MonoBehaviour
 	{
 		_score += value;
 	}
+	public void GetPowerup(Powerup.Type type)
+	{
+		switch (type)
+		{
+			case Powerup.Type.BonusScore:
+				_score += 100;
+				break;
+			default:
+				throw new System.InvalidOperationException();
+		}
+	}
 
 	private void SpawnBlocks()
 	{

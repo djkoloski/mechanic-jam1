@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4469198219231532}
   - component: {fileID: 212059779485167236}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4837398899700014}
   - component: {fileID: 212995751870993250}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4415110028262386}
   - component: {fileID: 61399908388456652}
   - component: {fileID: 114586056347789612}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Block
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -139,6 +139,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _value: 10
   _spriteRenderer: {fileID: 212059779485167236}
+  _powerupChance: 0.1
+  _powerupPrefab: {fileID: 1076307607381592, guid: 73ebde5615b312244acb40d7bc4dc17f,
+    type: 2}
 --- !u!212 &212059779485167236
 SpriteRenderer:
   m_ObjectHideFlags: 1
