@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 0
   _fallSpeed: 1
+  _killY: -6
 --- !u!212 &212747035395842288
 SpriteRenderer:
   m_ObjectHideFlags: 1
