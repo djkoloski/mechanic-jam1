@@ -27,8 +27,7 @@ public class Game : MonoBehaviour
 		get { return _highscore; }
 	}
 
-	private void Start()
-	{
+	private void Start() {
 		if (Game.Instance)
 			GameObject.Destroy(gameObject);
 		else _instance = this;

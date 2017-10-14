@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 638352813}
   - component: {fileID: 638352812}
   - component: {fileID: 638352811}
+  - component: {fileID: 638352815}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -192,7 +193,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1227940923
+--- !u!114 &638352815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 638352810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc84d5510f04ca240a85bbe30e8fde21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pixelsPerUnit: 32
+  _boardSize: {x: 12.5, y: 8.5}
+--- !u!1001 &998620625
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -231,7 +245,49 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114495849274946678, guid: adc5c38b98592764bb5ff449f04554cc,
+        type: 2}
+      propertyPath: _blockSaturation
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114495849274946678, guid: adc5c38b98592764bb5ff449f04554cc,
+        type: 2}
+      propertyPath: _blockValue
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314363216330650, guid: adc5c38b98592764bb5ff449f04554cc, type: 2}
+      propertyPath: m_Name
+      value: Level
+      objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 114984216608743694, guid: adc5c38b98592764bb5ff449f04554cc, type: 2}
+    - {fileID: 114495849274946678, guid: adc5c38b98592764bb5ff449f04554cc, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: adc5c38b98592764bb5ff449f04554cc, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &998620626 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1314363216330650, guid: adc5c38b98592764bb5ff449f04554cc,
+    type: 2}
+  m_PrefabInternal: {fileID: 998620625}
+--- !u!4 &998620627 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4147403722005672, guid: adc5c38b98592764bb5ff449f04554cc,
+    type: 2}
+  m_PrefabInternal: {fileID: 998620625}
+--- !u!114 &998620628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 998620626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c505f3ea70d4f4d43ac281809c5981a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _blocksWidth: 12
+  _blocksHeight: 8
+  _blocksRoot: {fileID: 998620627}
+  _blockPrefab: {fileID: 1498032991285706, guid: d24167a8ebe46774e8afbc6b5cfcf417,
+    type: 2}
+  _blockSaturation: 0.8
+  _blockValue: 0.9

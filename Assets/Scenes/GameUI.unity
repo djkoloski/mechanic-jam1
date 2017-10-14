@@ -194,8 +194,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1477603659}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 955.79926, y: 599.88745, z: 0.13497297}
-  m_LocalScale: {x: 1.1111112, y: 1.1111112, z: 1.1111112}
+  m_LocalPosition: {x: 955.79926, y: 539.88745, z: 0.13497297}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2091237434}
   - {fileID: 1834936631}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 1834936632}
   - component: {fileID: 1834936634}
   m_Layer: 5
-  m_Name: Ball Container
+  m_Name: Life Counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -232,7 +232,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1834936630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -831.99994, y: -508, z: 0}
+  m_LocalPosition: {x: -928, y: -508, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1477603663}
@@ -260,7 +260,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 6
-  m_Spacing: 2
+  m_Spacing: 8
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -412,7 +412,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2091237433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -831.99994, y: 508, z: 0}
+  m_LocalPosition: {x: -928, y: 508, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1477603663}
@@ -455,9 +455,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score
-
-    Numberrrrr'
+  m_Text: Score 0
 --- !u!222 &2091237436
 CanvasRenderer:
   m_ObjectHideFlags: 0
