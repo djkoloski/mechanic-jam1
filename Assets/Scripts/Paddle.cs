@@ -7,6 +7,8 @@ public class Paddle : MonoBehaviour
 	[SerializeField]
 	private Vector2 _bounceCenterOffset;
 
+	private Vector3 _initialPosition;
+
 	public Vector2 Size
 	{
 		get
@@ -26,6 +28,7 @@ public class Paddle : MonoBehaviour
 	{
 		_boxCollider2d = GetComponent<BoxCollider2D>();
 		_rigidbody2d = GetComponent<Rigidbody2D>();
+		_initialPosition = transform.position;
 	}
 	private void Update()
 	{
@@ -34,5 +37,9 @@ public class Paddle : MonoBehaviour
 	private void OnDrawGizmos()
 	{
 		Gizmos.DrawLine(transform.position, transform.position + (Vector3)_bounceCenterOffset);
+	}
+
+	public void Reset() {
+		transform.position = _initialPosition;
 	}
 }

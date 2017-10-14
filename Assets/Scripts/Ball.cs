@@ -11,11 +11,15 @@ public class Ball : MonoBehaviour
 
 	private Rigidbody2D _rigidBody2d;
 	private Vector2 _velocity;
+	private Vector3 _initialPosition;
+	private Vector2 _initialVelocity;
 
 	private void Awake()
 	{
 		_rigidBody2d = GetComponent<Rigidbody2D>();
+		_initialPosition = transform.position;
 		_velocity = new Vector2(Mathf.Cos(_startingAngle * Mathf.Deg2Rad), Mathf.Sin(_startingAngle * Mathf.Deg2Rad)) * _startingSpeed;
+		_initialVelocity = _velocity;
 	}
 	private void Update()
 	{
@@ -34,7 +38,7 @@ public class Ball : MonoBehaviour
 		else if (other.CompareTag("Deadzone"))
 		{
 			Game.Instance.RemoveLives(1);
-			Game.Instance.ReloadLevel();
+			Level.Instance.ResetPlayer();
 		}
 		else if (other.CompareTag("Paddle"))
 		{
@@ -70,5 +74,10 @@ public class Ball : MonoBehaviour
 		Vector2 velocityFlip = new Vector2( _velocity.x, -_velocity.y );
 
 		_velocity = Vector2.Lerp( velocityFlip, velocitySet, offCenterPos ).normalized * _velocity.magnitude;
+	}
+
+	public void Reset() {
+		transform.position = _initialPosition;
+		_velocity = _initialVelocity;
 	}
 }

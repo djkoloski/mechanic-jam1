@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4687079214659310}
   - component: {fileID: 61399067357868154}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Right
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4310505075227172}
   - component: {fileID: 61145618511869594}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bottom
   m_TagString: Deadzone
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4665616830642734}
   - component: {fileID: 61775359902502546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Left
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4567114568490590}
   - component: {fileID: 61137652542464290}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Top
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4683788173423270}
-  - component: {fileID: 114495849274946678}
+  - component: {fileID: 114729355493128488}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 58715785295837626}
   - component: {fileID: 50623220813023722}
   - component: {fileID: 114968773598320026}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ball
   m_TagString: Ball
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4181684855826012}
   - component: {fileID: 212994809301191580}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4173604230253230}
   - component: {fileID: 212618353505721866}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4411612012679492}
   - component: {fileID: 212640130937444792}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4147403722005672}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Blocks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 61279703205696880}
   - component: {fileID: 50528661389363640}
   - component: {fileID: 114756233328178086}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Paddle
   m_TagString: Paddle
   m_Icon: {fileID: 0}
@@ -523,7 +523,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 8}
   m_EdgeRadius: 0
---- !u!114 &114495849274946678
+--- !u!114 &114729355493128488
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -531,9 +531,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1314363216330650}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9cfb9d1e45db2b40a5159a53f772062, type: 3}
+  m_Script: {fileID: 11500000, guid: c505f3ea70d4f4d43ac281809c5981a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _paddle: {fileID: 114756233328178086}
+  _ball: {fileID: 114968773598320026}
+  _blocksWidth: 12
+  _blocksHeight: 8
+  _blocksRoot: {fileID: 4147403722005672}
+  _blockPrefab: {fileID: 1498032991285706, guid: d24167a8ebe46774e8afbc6b5cfcf417,
+    type: 2}
+  _blockSaturation: 0.8
+  _blockValue: 0.9
 --- !u!114 &114756233328178086
 MonoBehaviour:
   m_ObjectHideFlags: 1

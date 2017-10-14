@@ -41,8 +41,6 @@ public class Game : MonoBehaviour
 		}
 		_highscore = PlayerPrefs.GetInt("HighScore");
 		_lives = 3;
-
-		LoadLevel(0);
 	}
 
 	public void ReloadLevel() {
@@ -61,6 +59,7 @@ public class Game : MonoBehaviour
 	{
 		_score += value;
 	}
+	
 
 	public void RemoveScore(int value)
 	{

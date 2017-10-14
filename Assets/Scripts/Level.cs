@@ -10,6 +10,14 @@ public class Level : MonoBehaviour {
 		get { return _instance; }
 	}
 
+	[Header("References")]
+	[SerializeField]
+	private Paddle _paddle;
+	[SerializeField]
+	private Ball _ball;
+	[SerializeField]
+	private Transform _powerupRoot;
+
 	[Header("Blocks")]
 	[SerializeField]
 	private int _blocksWidth;
@@ -30,6 +38,22 @@ public class Level : MonoBehaviour {
 		SpawnBlocks();
 	}
 
+	void Awake () {
+		_instance = this;
+	}
+
+	public void GetPowerup(Powerup.Type type)
+	{
+		switch (type)
+		{
+			case Powerup.Type.BonusScore:
+				Game.Instance.AddScore(100);
+				break;
+			default:
+				throw new System.InvalidOperationException();
+		}
+	}
+
 	private void SpawnBlocks()
 	{
 		for (int y = 0; y < _blocksHeight; ++y)
@@ -45,6 +69,19 @@ public class Level : MonoBehaviour {
 
 				blockGO.GetComponent<Block>().SetColor(Color.HSVToRGB((float)y / _blocksHeight, _blockSaturation, _blockValue));
 			}
+		}
+	}
+
+	public void ResetPlayer() {
+		_paddle.Reset();
+		_ball.Reset();
+
+	}
+
+	public void CheckVictory() {
+		if (_blocksRoot.transform.childCount == 0) {
+			Game.Instance.AddScore(1000);
+			Game.Instance.ReloadLevel();
 		}
 	}
 }
