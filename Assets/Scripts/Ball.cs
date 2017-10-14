@@ -34,6 +34,11 @@ public class Ball : MonoBehaviour
 		{
 			BouncePaddle(other.GetComponent<Paddle>());
 		}
+		else if (other.CompareTag("Block"))
+		{
+			BounceWall(collision.contacts[0].normal);
+			other.GetComponent<Block>().OnBallHit();
+		}
 	}
 	private void BounceWall(Vector2 normal)
 	{

@@ -8,6 +8,7 @@ TagManager:
   - Paddle
   - Deadzone
   - Ball
+  - Block
   layers:
   - Default
   - TransparentFX
